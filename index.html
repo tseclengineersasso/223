@@ -16,22 +16,6 @@
     #qrcode {
         pointer-events: none;
     }
-    button {
-        background-color: #04AA6D;
-        color: rgb(255, 255, 255);
-        padding: 5px 5px;
-        margin: 5px 0;
-        border: none;
-        cursor: pointer;
-        width: 50%;
-        border-radius: 5px;
-        border: 1px solid #0d0f83;
-    }
-    button:hover {
-        opacity: 0.9;
-        background-color: #7139d3;
-        color: rgb(253, 223, 133);
-    }
     .container {
         text-align: center;
         padding: 1px;        
@@ -55,17 +39,19 @@
         font-weight: bold;
         line-height: 0.1;
         font-size: 23px;
-        padding-bottom: 5px;
+        padding-bottom: 3px;
     }
     .fnt3 {
-        font-size: 13px;
+        font-size: 14px;
+        line-height: 1.3;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .fnt4 {
+        font-size: 14px;
         line-height: 1.3;
         padding-left: 10px;
         padding-right: 10px;
-    }
-    .fnt4 {
-        font-family: 'Times New Roman';
-        font-weight: bold;
     }
     .fnt5 {
         font-family: 'Courier New';
@@ -99,7 +85,7 @@
     width: 23%; /* Could be more or less, depending on screen size */
     height: 53%;
     min-width: 343px;
-    min-height: 503px;
+    min-height: 513px;
     }
 
     /* Add Zoom Animation */
@@ -127,19 +113,11 @@
         <div class="container">
             <p class="fnt1">Dear</p>
             <p class="fnt2">Ujjala Debnath</p>
-            <p class="fnt3">Please tap on the below '<span class="fnt4">Pay Now</span>' button</p>
-
-            <a href="upi://pay?pa=tseclea@sbi&pn=TSECL%20ENGINEERS%20ASSOCIATION&mc=8398&tr=&tn=ID223%20Subscription&am=&cu=INR&url=&mode=02&purpose=00&orgid=159002&sign=MEUCIQC4XHZJWEfBspS1A6+UMtQcBr/ZT00bWTdvZJhRCsLilwIgGPyzjukW/iwSieU2ohpTzfGLGxYwuJfK4ws/lBz8rzs=">
-                <button class="fnt">Pay Now</button>
-            </a>
-            <p class="fnt3"><b>OR</b><br><span style="line-height: 1.3">Scan the QR Code in any UPI payment app</span></p>
+            <p class="fnt3">Please scan the QR Code to pay Subscription Fee</p>
             <center id="qrcode"></center>
-            <p class="fnt3">to pay Subscription Fee infavour of<br><a class="fnt" style="color: rgb(13, 9, 133);">TSECL ENGINEERS ASSOCIATION</a>
-                <br><span style="font-size: 16px;">UPI ID : <u style="color: rgb(13, 9, 133);"><b>tseclea@sbi</b></u></span></p>
-
-            <p class="fnt5" style="padding-top: 13px;">* Note that '<span class="fnt4">Pay Now</span>' button may not work if, UPI Payment app is not installed in your mobile. </p>
-            <p class="fnt5"> ** Please take a screenshot of the QR Code & upload the same image in your UPI payment app. </p>
-            
+            <p class="fnt4">Infavour of<br><a class="fnt" style="color: rgb(13, 9, 133);">TSECL ENGINEERS ASSOCIATION</a>
+                <br>UPI ID : <u style="color: rgb(13, 9, 133);"><b>tseclea@sbi</b></u></p>
+            <p class="fnt5"> ** Please take a screenshot of the QR Code and upload the same image in your UPI payment app. </p>
         </div>
     </div>
 </div>
@@ -149,8 +127,8 @@
         var upiData = "upi://pay?pa=tseclea@sbi&pn=TSECL%20ENGINEERS%20ASSOCIATION&mc=8398&tr=&tn=ID223%20Subscription&am=&cu=INR&url=&mode=02&purpose=00&orgid=159002&sign=MEUCIQC4XHZJWEfBspS1A6+UMtQcBr/ZT00bWTdvZJhRCsLilwIgGPyzjukW/iwSieU2ohpTzfGLGxYwuJfK4ws/lBz8rzs=";
         var qrcod = new QRCode(document.getElementById("qrcode"), {
             text: upiData,
-            width: 200,
-            height: 200,
+            width: 243,
+            height: 243,
         });
         qrcod.make();
     }
